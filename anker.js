@@ -101,14 +101,14 @@ const { limit } = require('./database/menu/limit')
 // Load Vcard Contact
 const vcard = 'BEGIN:VCARD\n' // metadata of the contact card
             + 'VERSION:3.0\n' 
-            + 'FN:√ANKER√\n' // Nama Lu
-            + 'ORG:#OwnerGanz;\n' // Nama Kontak Owner
-            + 'TEL;type=CELL;type=VOICE;waid=6281368646011:+62 813-6864-6011\n' // Nomer Lu cok
+            + 'FN:MyBy/n' // Nama Lu
+            + 'ORG: villopratama;\n' // Nama Kontak Owner
+            + 'TEL;type=CELL;type=VOICE;waid=6283843251769:+62 838-4325-1769\n' // Nomer Lu cok
             + 'END:VCARD'
 prefix = "#"
 blocked = []
 limitawal = userDefaultLimit
-cr = 'LOL~4NK3R-EROR'
+cr = 'Villopratama'
 memberlimit = memberLimitss
 
 // Functions
@@ -418,7 +418,7 @@ async function starts() {
 			const isSimi = isGroup ? samih.includes(from) : false
 			const isOwner = ownerNumber.includes(sender)
                         const isLevelingOn = isGroup ? _leveling.includes(groupId) : false
-                        const NomerOwner = '6281368646011@s.whatsapp.net'
+                        const NomerOwner = '6283843251769@s.whatsapp.net'
                         const isEventon = isGroup ? event.includes(from) : false
                         const isRegister = checkRegisteredUser(sender)
                         pushname = anker.contacts[sender] != undefined ? anker.contacts[sender].vname || anker.contacts[sender].notify : undefined
@@ -533,7 +533,9 @@ async function starts() {
 			switch(command) {
                                 case 'help':
                                 case 'menu':
-                                        if (!isRegister) return reply(mess.only.daftarB)
+                                  case 'bot': case 'Assalamualaikum':
+					
+					if (!isRegister) return reply(mess.only.daftarB)
                                         const reqXp  = 5000 * (Math.pow(2, getLevelingLevel(sender)) - 1)
 			                const uangku = checkATMuser(sender)
                                         await costum(help(pushname, prefix, botName, ownerName, reqXp, uangku), text, tescuk, cr)
@@ -644,7 +646,7 @@ async function starts() {
 			me = client.user
 			user.push(sender)
 			uptime = process.uptime()
-			teks = `⟩➢ *Nama Bot* : ${me.name}\n⟩➢ *Nomer Bot* : @${me.jid.split('@')[0]}\n⟩➢ *prefix* : | ${prefix} |\n⟩➢ *Aktif Sejak* : ${kyun(uptime)}\n\n⟩➢ *Instagram* : https://www.instagram.com/anker_2412\n⟩➢ *Special Thanks To* :\n⟩➢ Allah SWT \n⟩➢ MahankBarBar\n⟩Nurutomo\n⟩NazwaS\n⟩ANKER`
+			teks = `⟩➢ *Nama Bot* : ${me.name}\n⟩➢ *Nomer Bot* : @${me.jid.split('@')[0]}\n⟩➢ *prefix* : | ${prefix} |\n⟩➢ *Aktif Sejak* : ${kyun(uptime)}\n\n⟩➢ *Instagram* : https://www.instagram.com/villosmile_\n⟩➢ *Special Thanks To* :\n⟩➢ Allah SWT \n⟩➢ orangtua\n⟩pengguna myby\n⟩masvian\n⟩Villopratama`
 			buffer = await getBuffer(me.imgUrl)
 			anker.sendMessage(from, buffer, image, {quoted: mek, caption: teks, contextInfo:{mentionedJid: [me.jid]}})
 			break 
@@ -830,7 +832,7 @@ async function starts() {
 					var gh = body.slice(11)
 					var gbl7 = gh.split("|")[0];
 					var gbl8 = gh.split("|")[1];
-					if (args.length < 1) return reply(`Kirim perintah ${prefix}snowwrite teks1|teks2, contoh ${prefix}snowwrite aqulzz|galuh`)
+					if (args.length < 1) return reply(`Kirim perintah ${prefix}snowwrite teks1|teks2, contoh ${prefix}snowwrite myby|villoap`)
                                         if (!isRegister) return reply(mess.only.daftarB)
                                         if (isLimit(sender)) return reply(ind.limitend(pusname))
 					reply(mess.wait)
@@ -841,7 +843,7 @@ async function starts() {
 					break
 				case 'marvellogo':
 					var gh = body.slice(12)
-					if (args.length < 1) return reply(`Kirim perintah ${prefix}marvellogo teks, contoh ${prefix}marvellogo Nazwa Canss`)
+					if (args.length < 1) return reply(`Kirim perintah ${prefix}marvellogo teks, contoh ${prefix}marvellogo myby Canss`)
                                         if (!isRegister) return reply(mess.only.daftarB)
                                         if (isLimit(sender)) return reply(ind.limitend(pusname))
 					reply(mess.wait)
@@ -1172,7 +1174,7 @@ async function starts() {
 						teks += `╠➥ @${mem.jid.split('@')[0]}\n`
 						members_id.push(mem.jid)
 					}
-					mentions('╔══✪〘 Mention All 〙✪══\n╠➥User'+teks+'╚═〘 Dark BOT BOT 〙', members_id, true)
+					mentions('╔══✪〘 Mention All 〙✪══\n╠➥User'+teks+'╚═〘 MyBy 〙', members_id, true)
 					break
                 case 'tagall2':
 				anker.updatePresence(from, Presence.composing) 
@@ -1185,7 +1187,7 @@ async function starts() {
 						teks += `╠➥ ${mem.jid.split('@')[0]}\n`
 						members_id.push(mem.jid)
 					}
-					anker.sendMessage(from, '╔══✪〘 Mention All 〙✪══\n╠➥User'+teks+'╚═〘 Dark BOT BOT 〙', text, {quoted: mek})
+					anker.sendMessage(from, '╔══✪〘 Mention All 〙✪══\n╠➥User'+teks+'╚═〘 MyBy 〙', text, {quoted: mek})
 					break
                 case 'tagall3':
 				anker.updatePresence(from, Presence.composing) 
@@ -1198,7 +1200,7 @@ async function starts() {
 						teks += `╠➥ https://wa.me/${mem.jid.split('@')[0]}\n`
 						members_id.push(mem.jid)
 					}
-					anker.sendMessage(from, '╔══✪〘 Mention All 〙✪══\n╠➥User'+teks+'╚═〘 Dark BOT BOT 〙', text, {detectLinks: false, quoted: mek})
+					anker.sendMessage(from, '╔══✪〘 Mention All 〙✪══\n╠➥User'+teks+'╚═〘 MyBy 〙', text, {detectLinks: false, quoted: mek})
 					break
                         case 'tagall4':
 				anker.updatePresence(from, Presence.composing) 
@@ -1211,7 +1213,7 @@ async function starts() {
 						teks += `╠➥ ${mem.jid.split('@')[0]}@c.us\n`
 						members_id.push(mem.jid)
 					}
-					anker.sendMessage(from, '╔══✪〘 Mention All 〙✪══\n╠➥User'+teks+'╚═〘 Dark BOT BOT 〙', text, {quoted: mek})
+					anker.sendMessage(from, '╔══✪〘 Mention All 〙✪══\n╠➥User'+teks+'╚═〘 MyBy〙', text, {quoted: mek})
 					break
                 case 'tagall5':
 				anker.updatePresence(from, Presence.composing) 
@@ -1224,7 +1226,7 @@ async function starts() {
 						teks += `╠➥ ${mem.jid.split('@')[0]}@s.whatsapp.net\n`
 						members_id.push(mem.jid)
 					}
-					reply('╔══✪〘 Mention All 〙✪══\n╠➥User'+teks+'╚═〘 Dark BOT BOT 〙')
+					reply('╔══✪〘 Mention All 〙✪══\n╠➥User'+teks+'╚═〘 MyBy 〙')
 					break
 				case 'send':
 					var pc = body.slice(6)
@@ -1636,7 +1638,7 @@ async function starts() {
 						fs.unlinkSync(media)
 						if (err) return reply('❰❗❱ Gagal, pada saat mengkonversi sticker ke gambar ❰❗❱')
 						buffer = fs.readFileSync(ran)
-						anker.sendMessage(from, buffer, image, {quoted: mek, caption: '>//<'})
+						anker.sendMessage(from, buffer, image, {quoted: mek, caption: 'tu ajg'})
 						fs.unlinkSync(ran)
 					})
 					break
@@ -1825,7 +1827,7 @@ async function starts() {
 					var gh = body.slice(11)
 					var teks1 = gh.split("|")[0];
 					var teks2 = gh.split("|")[1];
-					if (args.length < 1) return reply(`teksnya mana? contoh ${prefix}logowolf Nazwa|Canss`)
+					if (args.length < 1) return reply(`teksnya mana? contoh ${prefix}logowolf myby|Canss`)
                                         if (!isRegister) return reply(mess.only.daftarB)
                                         if (isLimit(sender)) return reply(ind.limitend(pusname))
 					reply(mess.wait)
@@ -1903,7 +1905,7 @@ async function starts() {
 					var gh = body.slice(11)
 					var teks1 = gh.split("|")[0];
 					var teks2 = gh.split("|")[1];
-					if (args.length < 1) return reply(`teksnya mana? contoh ${prefix}logowolf Nazwa|Canss`)
+					if (args.length < 1) return reply(`teksnya mana? contoh ${prefix}logowolf myby|Canss`)
                                         if (!isRegister) return reply(mess.only.daftarB)
                                         if (isLimit(sender)) return reply(ind.limitend(pusname))
 					reply(mess.wait)
@@ -1923,7 +1925,7 @@ async function starts() {
 					var gh = body.slice(7)
 					var gbl1 = gh.split("|")[0];
 					var gbl2 = gh.split("|")[1];
-					if (args.length < 1) return reply('Teksnya mana um\nContoh: ${prefix}phlogo |Nazwa|Canss')
+					if (args.length < 1) return reply('Teksnya mana um\nContoh: ${prefix}phlogo |myby|Canss')
                                         if (!isRegister) return reply(mess.only.daftarB)
                                         if (isLimit(sender)) return reply(ind.limitend(pusname))
 					reply(mess.wait)
@@ -2018,7 +2020,7 @@ async function starts() {
                                 case 'neonlogo':
                                         var gh = body.slice(9)
                                         var teks1 = gh.split("|")[0];
-                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}neonlogo NazwaCanss')
+                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}neonlogo mybyCanss')
                                         if (!isRegister) return reply(mess.only.daftarB)
                                         if (isLimit(sender)) return reply(ind.limitend(pusname))
                                         reply(mess.wait)
@@ -2030,7 +2032,7 @@ async function starts() {
                                 case 'neonlogo2':
                                         var gh = body.slice(10)
                                         teks1 = gh.split("|")[0];
-                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}neonlogo2 NazwaCanss')
+                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}neonlogo2 mybyCanss')
                                         if (!isRegister) return reply(mess.only.daftarB)
                                         if (isLimit(sender)) return reply(ind.limitend(pusname))
                                         reply(mess.wait)
@@ -2043,7 +2045,7 @@ async function starts() {
                                         var gh = body.slice(9)
                                         var teks1 = gh.split("|")[0];
                                         var teks2 = gh.split("|")[1];
-                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}lionlogo Nazwa|Canss')
+                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}lionlogo myby|Canss')
                                         if (!isRegister) return reply(mess.only.daftarB)
                                         if (isLimit(sender)) return reply(ind.limitend(pusname))
                                         reply(mess.wait)
@@ -2063,7 +2065,7 @@ async function starts() {
                                 case 'jokerlogo':
                                         var gh = body.slice(10)
                                         var teks1 = gh.split("|")[0];
-                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}jokerlogo NazwaCanss')
+                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}jokerlogo mybynss')
                                         if (!isRegister) return reply(mess.only.daftarB)
                                         if (isLimit(sender)) return reply(ind.limitend(pusname))
                                         reply(mess.wait)
@@ -2092,7 +2094,7 @@ async function starts() {
                                 case 'shadow':
                                         var gh = body.slice(7)
                                         var teks1 = gh.split("|")[0];
-                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}shadow NazwaCanss')
+                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}shadow mybyfnss')
                                         if (!isRegister) return reply(mess.only.daftarB)
                                         if (isLimit(sender)) return reply(ind.limitend(pusname))
                                         reply(mess.wait)
@@ -2104,7 +2106,7 @@ async function starts() {
                                 case 'burnpaper':
                                         var gh = body.slice(10)
                                         var teks1 = gh.split("|")[0];
-                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}burnpaper NazwaCanss')
+                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}burnpaper mybyfnss')
                                         if (!isRegister) return reply(mess.only.daftarB)
                                         if (isLimit(sender)) return reply(ind.limitend(pusname))
                                         reply(mess.wait)
@@ -2116,7 +2118,7 @@ async function starts() {
                                 case 'coffee':
                                         var gh = body.slice(7)
                                         var teks1 = gh.split("|")[0];
-                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}coffee NazwaCanss')
+                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}coffee mybyfnss')
                                         if (!isRegister) return reply(mess.only.daftarB)
                                         if (isLimit(sender)) return reply(ind.limitend(pusname))
                                         reply(mess.wait)
@@ -2128,7 +2130,7 @@ async function starts() {
                                 case 'lovepaper':
                                         var gh = body.slice(10)
                                         var teks1 = gh.split("|")[0];
-                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}lovepaper NazwaCanss')
+                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}lovepaper mybyfnss')
                                         if (!isRegister) return reply(mess.only.daftarB)
                                         if (isLimit(sender)) return reply(ind.limitend(pusname))
                                         reply(mess.wait)
@@ -2140,7 +2142,7 @@ async function starts() {
                                 case 'woodblock':
                                         var gh = body.slice(10)
                                         var teks1 = gh.split("|")[0];
-                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}woodblock NazwaCanss')
+                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}woodblock mybyCanss')
                                         if (!isRegister) return reply(mess.only.daftarB)
                                         if (isLimit(sender)) return reply(ind.limitend(pusname))
                                         reply(mess.wait)
@@ -2152,7 +2154,7 @@ async function starts() {
                                 case 'qowheart':
                                         var gh = body.slice(9)
                                         var teks1 = gh.split("|")[0];
-                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}qowheart NazwaCanss')
+                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}qowheart mybyCanss')
                                         if (!isRegister) return reply(mess.only.daftarB)
                                         if (isLimit(sender)) return reply(ind.limitend(pusname))
                                         reply(mess.wait)
@@ -2164,7 +2166,7 @@ async function starts() {
                                 case 'mutgrass':
                                         var gh = body.slice(9)
                                         var teks1 = gh.split("|")[0];
-                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}mutgrass NazwaCanss')
+                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}mutgrass mybyfnss')
                                         if (!isRegister) return reply(mess.only.daftarB)
                                         if (isLimit(sender)) return reply(ind.limitend(pusname))
                                         reply(mess.wait)
@@ -2176,7 +2178,7 @@ async function starts() {
                                 case 'undergocean':
                                         var gh = body.slice(12)
                                         var teks1 = gh.split("|")[0];
-                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}undergocean NazwaCanss')
+                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}undergocean mybynss')
                                         if (!isRegister) return reply(mess.only.daftarB)
                                         if (isLimit(sender)) return reply(ind.limitend(pusname))
                                         reply(mess.wait)
@@ -2188,7 +2190,7 @@ async function starts() {
                                 case 'woodenboards':
                                         var gh = body.slice(13)
                                         var teks1 = gh.split("|")[0];
-                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}woodenboards NazwaCanss')
+                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}woodenboards mybyCanss')
                                         if (!isRegister) return reply(mess.only.daftarB)
                                         if (isLimit(sender)) return reply(ind.limitend(pusname))
                                         reply(mess.wait)
@@ -2200,7 +2202,7 @@ async function starts() {
                                 case 'wolfmetal':
                                         var gh = body.slice(10)
                                         var teks1 = gh.split("|")[0];
-                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}wolfmetal NazwaCanss')
+                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}wolfmetal mybyfnss')
                                         if (!isRegister) return reply(mess.only.daftarB)
                                         if (isLimit(sender)) return reply(ind.limitend(pusname))
                                         reply(mess.wait)
@@ -2212,7 +2214,7 @@ async function starts() {
                                 case 'metalictglow':
                                         var gh = body.slice(14)
                                         var teks1 = gh.split("|")[0];
-                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}metalictglow NazwaCanss')
+                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}metalictglow mybyfnss')
                                         if (!isRegister) return reply(mess.only.daftarB)
                                         if (isLimit(sender)) return reply(ind.limitend(pusname))
                                         reply(mess.wait)
@@ -2225,7 +2227,7 @@ async function starts() {
                                         var gh = body.slice(5)
                                         var teks1 = gh.split("|")[0];
                                         var teks2 = gh.split("|")[1];
-                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}8bit Nazwa|Canss')
+                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}8bit myby|Canss')
                                         if (!isRegister) return reply(mess.only.daftarB)
                                         if (isLimit(sender)) return reply(ind.limitend(pusname))
                                         reply(mess.wait)
@@ -2335,7 +2337,7 @@ async function starts() {
                                         var gh = body.slice(9)
                                         var teks1 = gh.split("|")[0];
                                         var teks2 = gh.split("|")[1];
-                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}pubglogo Nazwa|Canss')
+                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}pubglogo myby|Canss')
                                         if (!isRegister) return reply(mess.only.daftarB)
                                         if (isLimit(sender)) return reply(ind.limitend(pusname))
                                         anu = await fetchJson(`https://tobz-api.herokuapp.com/api/photooxy?theme=pubg&text1=${teks1}&text2=${teks2}&apikey=BotWeA`, {method: 'get'})
@@ -2346,7 +2348,7 @@ async function starts() {
                                 case 'herrypotter':
                                 case 'harrypotter':
                                         var gh = body.slice(12)
-                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}harrypotter NazwaCanss')
+                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}harrypotter mybyCanss')
                                         if (!isRegister) return reply(mess.only.daftarB)
                                         if (isLimit(sender)) return reply(ind.limitend(pusname))
                                         anu = await fetchJson(`https://tobz-api.herokuapp.com/api/photooxy?theme=harry_potter&text=${gh}&apikey=BotWeA`, {method: 'get'})
